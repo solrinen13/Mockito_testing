@@ -29,6 +29,10 @@ class UserDaoImplTest {
     @Test
     void shouldGetUserByName() {
         assertNotNull(userDao.getUserByName("Степан"));
+    }
+
+    @Test
+    void shouldGetUserByNameNull() {
         assertNull(userDao.getUserByName("Ваня"));
     }
 

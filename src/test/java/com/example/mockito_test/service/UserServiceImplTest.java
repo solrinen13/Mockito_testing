@@ -20,6 +20,7 @@ class UserServiceImplTest {
     private UserDaoImpl userDaoImplMock;
     @InjectMocks
     private UserServiceImpl userService;
+
     @BeforeAll
     private static void initParam() {
         System.out.println("Start testing");
@@ -34,8 +35,8 @@ class UserServiceImplTest {
     public void shouldCheckUserExistTrue() {
         when(userDaoImplMock.getUserByName("Василий"))
                 .thenReturn(new User("Василий"));
-       boolean checkExist =  userService.checkUserExist(new User("Василий"));
-       assertTrue(checkExist);
+        boolean checkExist = userService.checkUserExist(new User("Василий"));
+        assertTrue(checkExist);
 
     }
 
@@ -43,7 +44,7 @@ class UserServiceImplTest {
     public void shouldCheckUserExistFalse() {
         when(userDaoImplMock.getUserByName("Василий"))
                 .thenReturn(null);
-        boolean checkExist =  userService.checkUserExist(new User("Василий"));
+        boolean checkExist = userService.checkUserExist(new User("Василий"));
         assertFalse(checkExist);
 
     }
